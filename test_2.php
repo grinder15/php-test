@@ -49,5 +49,5 @@ function type_check(array $people): bool
 // TODO: uncomment once you finished.
 // echo expect($filipino->greet(), 'Magandang Umaga', 'Filipino must greet "Magandang Umaga"');
 // echo expect($american->greet(), 'Good Morning', 'American must greet "Good Morning"');
-// echo expect($korean->greet(), 'Joh-eun Achim-ieyo', 'Filipino must greet "Joh-eun Achim-ieyo"');
+// echo expect($korean->greet(), 'Joh-eun Achim-ieyo', 'Korean must greet "Joh-eun Achim-ieyo"');
 // echo expect(type_check($people), true, 'All people must implement "Person" interface.');
