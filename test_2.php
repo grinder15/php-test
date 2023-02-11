@@ -1,32 +1,36 @@
 <?php
 
-// TEST 2: Polymorphism.
-// Create a class of three types of person, based on nationality, derived from
-// 'Person' interface to implement expected behavior.
-// TODOs:
-// 1. Create 'Filipino' class that implements 'Person' interface.
-// 2. Implement the 'greet' method of 'Filipino' class and return a greeting string "Magandang Umaga".
-// 3. Create 'American' class that implements 'Person' interface.
-// 4. Implement the 'greet' method of 'American' class and return a greeting string "Good Morning".
-// 5. Create 'Korean' class that implements 'Person' interface.
-// 6. Implement the 'greet' method of 'Korean' class and return a greeting string "Joh-eun Achim-ieyo".
-
-// NOTE: MIND THE CASE of the greetings. All greetings must be ing Title Case.
-
 interface Person
 {
-    public function greet(): string; // returns a string.
+    public function greet(): string;
 }
 
-// TODO: your code here.
+class Filipino implements Person {
+    public function greet(): string {
+        $greeting = "Magandang Umaga";
+        return $greeting;
+    }
+}
 
-// TODO: Uncomment this once you finish the classes to run the test.
-// $filipino = new Filipino;
-// $american = new American;
-// $korean = new Korean;
-// $people = [$filipino, $american, $korean];
+class American implements Person {
+    public function greet(): string{
+        $greeting = "Good Morning";
+        return $greeting;
+    }
+}
 
-// DON'T MODIFY THIS. 
+class Korean implements Person {
+    public function greet(): string{
+        $greeting = "Joh-eun Achim-ieyo";
+        return $greeting;
+    }
+}
+
+$filipino = new Filipino();
+$american = new American();
+$korean = new Korean();
+$people = [$filipino, $american, $korean];
+
 function expect($value, $expectation, $description)
 {
     if ($value === $expectation) {
@@ -46,8 +50,9 @@ function type_check(array $people): bool
     return true;
 }
 
-// TODO: uncomment once you finished.
-// echo expect($filipino->greet(), 'Magandang Umaga', 'Filipino must greet "Magandang Umaga"');
-// echo expect($american->greet(), 'Good Morning', 'American must greet "Good Morning"');
-// echo expect($korean->greet(), 'Joh-eun Achim-ieyo', 'Korean must greet "Joh-eun Achim-ieyo"');
-// echo expect(type_check($people), true, 'All people must implement "Person" interface.');
+echo expect($filipino->greet(), "Magandang Umaga", 'Filipino must greet "Magandang Umaga"');
+echo expect($american->greet(), "Good Morning", 'American must greet "Good Morning"');
+echo expect($korean->greet(), "Joh-eun Achim-ieyo", 'Korean must greet "Joh-eun Achim-ieyo"');
+echo expect(type_check($people), true, 'All people must implement "Person" interface.');
+
+?>
